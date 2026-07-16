@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">The Funni Farm social preview</title>
+  <desc id="desc">Social preview card for The Funni Farm hemp and CBG shop.</desc>
+  <rect width="1200" height="630" fill="#121a10"/>
+  <circle cx="1010" cy="126" r="130" fill="#b77b28" opacity=".4"/>
+  <path d="M0 432c170-110 330-118 520-38 244 103 428 78 680-74v310H0z" fill="#26351f"/>
+  <path d="M0 520c280-95 520-67 720-12 178 49 331 33 480-43v165H0z" fill="#0d100b"/>
+  <circle cx="194" cy="316" r="178" fill="#fffaf0" stroke="#e8be5d" stroke-width="9"/>
+  <image href="/brand/funni-farm-official-logo.png" x="47" y="169" width="294" height="294"/>
+  <text x="430" y="235" fill="#fffaf0" font-family="Georgia, serif" font-size="86" font-weight="800">The Funni Farm</text>
+  <text x="432" y="316" fill="#e8be5d" font-family="Georgia, serif" font-size="42" font-weight="700">Small-farm hemp, CBG, seeds, and handmade goodness</text>
+  <text x="432" y="385" fill="#f8efd9" font-family="Arial, sans-serif" font-size="30" font-weight="700">Lab transparency • Manual order review • Adult hemp products</text>
+</svg>
