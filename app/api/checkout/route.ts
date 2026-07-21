@@ -172,41 +172,70 @@ export async function POST(request: NextRequest) {
 
     if (emailConfigured) {
       const orderNumber = order?.orderNumber ?? createOrderRequestNumber();
-      const email = await sendOrderRequestEmail({
-        orderNumber,
-        customer: sanitizedCustomer,
-        items,
-        compliance,
-        subtotal,
-        origin,
-      });
       const checkoutUrl = createConfirmationUrl({
         mode: "email",
         orderNumber,
         origin,
       });
 
-      if (order) {
+      try {
+        const email = await sendOrderRequestEmail({
+          orderNumber,
+          customer: sanitizedCustomer,
+          items,
+          compliance,
+          subtotal,
+          origin,
+        });
+
+        if (order) {
+          try {
+            order = await updateOrder(order.id, {
+              notes:
+                "Order request captured securely and emailed to The Funni Farm for review.",
+              paymentSessionId: email.id,
+              paymentSessionUrl: checkoutUrl,
+              status: "order_request_sent",
+            });
+          } catch (updateError) {
+            console.error("Order was emailed but status update failed", updateError);
+          }
+        }
+
+        return NextResponse.json({
+          provider: "manual-email",
+          sessionId: email.id,
+          checkoutUrl,
+          orderNumber,
+          emailSent: true,
+        });
+      } catch (emailError) {
+        console.error("Order email failed", emailError);
+
+        if (!order) {
+          throw emailError;
+        }
+
         try {
-          order = await updateOrder(order.id, {
+          await updateOrder(order.id, {
             notes:
-              "Order request captured securely and emailed to The Funni Farm for review.",
-            paymentSessionId: email.id,
+              "Order request captured securely in Supabase, but the email notification failed. Review this order in Supabase.",
             paymentSessionUrl: checkoutUrl,
-            status: "order_request_sent",
           });
         } catch (updateError) {
-          console.error("Order was emailed but status update failed", updateError);
+          console.error("Order email failed and status update failed", updateError);
         }
-      }
 
-      return NextResponse.json({
-        provider: "manual-email",
-        sessionId: email.id,
-        checkoutUrl,
-        orderNumber,
-        emailSent: true,
-      });
+        return NextResponse.json({
+          provider: "supabase",
+          sessionId: order.paymentSessionId,
+          checkoutUrl,
+          orderNumber,
+          emailSent: false,
+          message:
+            "Order request saved securely. The farm should review it in Supabase because the email notification did not send.",
+        });
+      }
     }
 
     if (isProductionRuntime() && !storageConfigured) {
