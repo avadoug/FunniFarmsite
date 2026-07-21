@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Edit3, Plus, Save, Trash2 } from "lucide-react";
 import { AdminOrdersPanel } from "./AdminOrdersPanel";
-import { Button } from "@/components/ui/Button";
+import { Button, ButtonLink } from "@/components/ui/Button";
 import {
   productBadges,
   productCategories,
@@ -209,10 +209,18 @@ export function AdminProductManager() {
             prepare products for real photos, COAs, ingredients, and inventory.
           </p>
         </div>
-        <Button onClick={() => setDraft(blankProduct)} variant="secondary">
-          <Plus aria-hidden className="size-4" />
-          New Product
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <ButtonLink href="#admin-orders" variant="primary">
+            Orders
+          </ButtonLink>
+          <ButtonLink href="#admin-products" variant="ghost">
+            Products
+          </ButtonLink>
+          <Button onClick={() => setDraft(blankProduct)} variant="secondary">
+            <Plus aria-hidden className="size-4" />
+            New Product
+          </Button>
+        </div>
       </div>
 
       {(message || error) && (
@@ -221,11 +229,10 @@ export function AdminProductManager() {
         </div>
       )}
 
-      <div className="mt-8">
-        <AdminOrdersPanel password={password} />
-      </div>
-
-      <div className="mt-8 grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
+      <div
+        className="mt-8 scroll-mt-24 grid gap-8 lg:grid-cols-[.9fr_1.1fr]"
+        id="admin-products"
+      >
         <section className="space-y-3">
           {products.map((product) => (
             <article
@@ -515,6 +522,10 @@ export function AdminProductManager() {
             {loading ? "Saving..." : "Save Product"}
           </Button>
         </form>
+      </div>
+
+      <div className="mt-10">
+        <AdminOrdersPanel password={password} />
       </div>
     </div>
   );

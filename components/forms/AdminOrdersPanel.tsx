@@ -115,7 +115,10 @@ export function AdminOrdersPanel({ password }: AdminOrdersPanelProps) {
   }, [password]);
 
   return (
-    <section className="rounded-seed border border-forest-900/12 bg-cream-50 p-5 shadow-farm md:p-6">
+    <section
+      className="scroll-mt-24 rounded-seed border border-forest-900/12 bg-cream-50 p-5 shadow-farm md:p-6"
+      id="admin-orders"
+    >
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
@@ -149,7 +152,7 @@ export function AdminOrdersPanel({ password }: AdminOrdersPanelProps) {
         </div>
       )}
 
-      <div className="mt-6 space-y-4">
+      <div className="mt-6 max-h-[42rem] space-y-4 overflow-y-auto pr-1">
         {orders.length === 0 && !loading ? (
           <div className="rounded-2xl border border-dashed border-forest-900/20 bg-white/60 p-6 text-sm font-bold text-forest-900/72">
             No orders found yet. Submit a checkout test, then refresh this panel.
