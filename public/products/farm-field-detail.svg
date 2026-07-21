@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Farm field detail</title>
+  <desc id="desc">Small farm field and barn illustration for hemp flower and seed listings.</desc>
+  <rect width="900" height="900" fill="#fff4dc"/>
+  <circle cx="225" cy="210" r="76" fill="#fffaf0" stroke="#171611" stroke-width="5"/>
+  <path d="M0 610c130-85 275-105 435-28 151 72 277 62 465-43v361H0z" fill="#49623b"/>
+  <path d="M0 734c165-93 337-81 501-17 142 56 262 48 399-18v201H0z" fill="#172011"/>
+  <g transform="translate(560 330)">
+    <rect x="0" y="95" width="210" height="220" fill="#171611"/>
+    <path d="M-28 95L105-20 238 95z" fill="#372719"/>
+    <rect x="70" y="178" width="78" height="137" fill="#6d4317"/>
+    <path d="M70 178l78 137m0-137L70 315" stroke="#d5b360" stroke-width="8" opacity=".55"/>
+  </g>
+  <g transform="translate(170 630)" fill="#24351c">
+    <path d="M0 82c18-70 18-70 36 0 60-45 60-45 31 22 74 3 74 3 7 36 55 47 55 47-18 30-18 70-18 70-36 0-60 45-60 45-31-22-74-3-74-3-7-36-55-47-55-47 18-30z"/>
+    <path d="M150 15c14-55 14-55 28 0 47-35 47-35 24 18 58 2 58 2 5 28 43 38 43 38-14 24-14 55-14 55-28 0-47 35-47 35-24-18-58-2-58-2-5-28-43-38-43-38 14-24z"/>
+  </g>
+  <text x="450" y="800" fill="#fffaf0" font-family="Georgia, serif" font-size="42" font-weight="800" text-anchor="middle">SMALL FARM CARE</text>
+</svg>

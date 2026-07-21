@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">CBG Hemp Flower</title>
+  <desc id="desc">Seed-packet style art for CBG Hemp Flower.</desc>
+  <rect width="900" height="900" fill="#f8efd9"/>
+  <rect x="100" y="84" width="700" height="732" rx="34" fill="#fffaf0" stroke="#26351f" stroke-width="10"/>
+  <rect x="136" y="122" width="628" height="146" rx="18" fill="#26351f"/>
+  <text x="450" y="190" fill="#fffaf0" font-family="Georgia, serif" font-size="52" font-weight="800" text-anchor="middle">CBG HEMP</text>
+  <text x="450" y="246" fill="#e8be5d" font-family="Georgia, serif" font-size="50" font-weight="800" text-anchor="middle">FLOWER</text>
+  <g transform="translate(450 508)">
+    <path d="M0-210c38 84 34 144 0 212-34-68-38-128 0-212z" fill="#49623b"/>
+    <path d="M-44-147c-52 64-72 117-59 176 55-35 83-84 59-176zm88 0c52 64 72 117 59 176-55-35-83-84-59-176z" fill="#6f834e"/>
+    <path d="M-91-60c-62 37-93 75-96 130 58-14 94-48 96-130zm182 0c62 37 93 75 96 130-58-14-94-48-96-130z" fill="#3f512f"/>
+    <path d="M0 2v202" stroke="#26351f" stroke-width="10" stroke-linecap="round"/>
+    <ellipse cx="-58" cy="168" rx="86" ry="62" fill="#6b7a47"/>
+    <ellipse cx="62" cy="178" rx="92" ry="60" fill="#4f6339"/>
+    <ellipse cx="0" cy="132" rx="102" ry="70" fill="#82945a"/>
+  </g>
+  <rect x="184" y="704" width="532" height="54" rx="27" fill="#26351f"/>
+  <text x="450" y="740" fill="#fffaf0" font-family="Arial, sans-serif" font-size="23" font-weight="800" text-anchor="middle">FARM-GROWN HEMP</text>
+</svg>

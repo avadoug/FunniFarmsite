@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Hemp Seed Pack</title>
+  <desc id="desc">Vintage seed packet style hemp seed pack for The Funni Farm.</desc>
+  <rect width="900" height="900" fill="#efe0bd"/>
+  <path d="M160 90h580v720H160z" fill="#fffaf0" stroke="#171611" stroke-width="10"/>
+  <path d="M190 122h520v116H190z" fill="#26351f"/>
+  <text x="450" y="188" fill="#fffaf0" font-family="Georgia, serif" font-size="54" font-weight="800" text-anchor="middle">HEMP SEEDS</text>
+  <text x="450" y="276" fill="#171611" font-family="Georgia, serif" font-size="32" font-weight="700" text-anchor="middle">THE FUNNI FARM GENETICS</text>
+  <g transform="translate(450 470)">
+    <circle cx="0" cy="0" r="172" fill="#eef2df" stroke="#26351f" stroke-width="7"/>
+    <path d="M0-135c26 58 24 100 0 147-24-47-26-89 0-147z" fill="#49623b"/>
+    <path d="M-35-90c-41 50-56 91-46 137 43-27 65-65 46-137zm70 0c41 50 56 91 46 137-43-27-65-65-46-137z" fill="#6f834e"/>
+    <path d="M-75-31c-50 29-72 59-75 103 46-11 73-37 75-103zm150 0c50 29 72 59 75 103-46-11-73-37-75-103z" fill="#3f512f"/>
+    <path d="M0 0v118" stroke="#26351f" stroke-width="8" stroke-linecap="round"/>
+    <g fill="#8d5132">
+      <ellipse cx="-88" cy="142" rx="24" ry="36" transform="rotate(-25 -88 142)"/>
+      <ellipse cx="-24" cy="154" rx="24" ry="36" transform="rotate(8 -24 154)"/>
+      <ellipse cx="44" cy="145" rx="24" ry="36" transform="rotate(25 44 145)"/>
+      <ellipse cx="104" cy="132" rx="24" ry="36" transform="rotate(-10 104 132)"/>
+    </g>
+  </g>
+  <rect x="212" y="698" width="476" height="58" rx="29" fill="#b77b28"/>
+  <text x="450" y="737" fill="#171611" font-family="Arial, sans-serif" font-size="24" font-weight="900" text-anchor="middle">RAW &amp; SHELLED</text>
+</svg>
