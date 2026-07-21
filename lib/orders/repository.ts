@@ -4,6 +4,7 @@ import {
   createSupabaseOrder,
   getSupabaseOrderByNumber,
   isSupabaseOrderStorageConfigured,
+  listSupabaseOrders,
   type OrderUpdate,
   updateSupabaseOrder,
 } from "./supabase";
@@ -65,6 +66,19 @@ export async function getOrderByNumber(orderNumber: string) {
 
   const orders = await readOrderFile();
   return orders.find((order) => order.orderNumber === orderNumber) ?? null;
+}
+
+export async function listOrders(limit = 100) {
+  const safeLimit = Math.min(Math.max(limit, 1), 200);
+
+  if (isSupabaseOrderStorageConfigured()) {
+    return listSupabaseOrders(safeLimit);
+  }
+
+  const orders = await readOrderFile();
+  return orders
+    .toSorted((a, b) => b.createdAt.localeCompare(a.createdAt))
+    .slice(0, safeLimit);
 }
 
 export async function updateOrder(id: string, patch: OrderUpdate) {

@@ -54,6 +54,16 @@ export async function getSupabaseOrderByNumber(orderNumber: string) {
   return rows[0] ? fromSupabaseRow(rows[0]) : null;
 }
 
+export async function listSupabaseOrders(limit = 100) {
+  const safeLimit = Math.min(Math.max(limit, 1), 200);
+  const rows = await requestSupabaseRows(
+    "GET",
+    `?select=*&order=created_at.desc&limit=${safeLimit}`,
+  );
+
+  return rows.map(fromSupabaseRow);
+}
+
 export async function updateSupabaseOrder(id: string, patch: OrderUpdate) {
   const rows = await requestSupabaseRows(
     "PATCH",

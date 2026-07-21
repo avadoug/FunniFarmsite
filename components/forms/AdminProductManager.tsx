@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Edit3, Plus, Save, Trash2 } from "lucide-react";
+import { AdminOrdersPanel } from "./AdminOrdersPanel";
 import { Button } from "@/components/ui/Button";
 import {
   productBadges,
@@ -155,15 +156,15 @@ export function AdminProductManager() {
             Local-only starter admin
           </p>
           <h1 className="mt-3 font-display text-4xl font-black text-forest-900">
-            Product Admin
+            Store Admin
           </h1>
           <p className="mt-3 text-sm leading-6 text-forest-900/70">
-            This starter admin is hidden from public navigation and blocks
-            writes in production without a database. Use the local
+            This admin is hidden from public navigation. Use the private
             <code className="mx-1 rounded bg-forest-900/10 px-1.5 py-1 font-black">
               ADMIN_PASSWORD
             </code>
-            value from your private environment file.
+            value from your environment variables to review orders and manage
+            the starter catalog.
           </p>
           <form
             className="mt-6 space-y-4"
@@ -201,11 +202,11 @@ export function AdminProductManager() {
             Local JSON catalog
           </p>
           <h1 className="mt-2 font-display text-4xl font-black text-forest-900">
-            Product Admin
+            Store Admin
           </h1>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-forest-900/70">
-            Add, edit, delete, activate, and prepare products for real photos,
-            COAs, ingredients, inventory, and future database migration.
+            Review order requests, mark manual payments paid or unpaid, and
+            prepare products for real photos, COAs, ingredients, and inventory.
           </p>
         </div>
         <Button onClick={() => setDraft(blankProduct)} variant="secondary">
@@ -219,6 +220,10 @@ export function AdminProductManager() {
           {message || error}
         </div>
       )}
+
+      <div className="mt-8">
+        <AdminOrdersPanel password={password} />
+      </div>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
         <section className="space-y-3">

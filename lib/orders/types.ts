@@ -35,6 +35,8 @@ export type Order = {
   status:
     | "order_request_pending_email"
     | "order_request_sent"
+    | "manual_unpaid"
+    | "manual_paid"
     | "mock_pending_payment"
     | "mock_paid"
     | "cancelled";

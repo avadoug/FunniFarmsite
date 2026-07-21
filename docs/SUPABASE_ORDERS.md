@@ -36,3 +36,19 @@ If `RESEND_API_KEY` and `FUNNI_FARM_ORDER_EMAIL` are configured, checkout stores
 the order and sends the existing order-request email. If email is not
 configured but Supabase is configured, the order is still stored for farm
 review in Supabase.
+
+## 4. Admin order review
+
+The private `/admin` page can show recent orders and manually mark them paid,
+unpaid, or cancelled.
+
+In production, `/admin` is hidden unless this is set in Vercel:
+
+```env
+ENABLE_ADMIN=true
+ADMIN_PASSWORD=use-a-long-private-password
+```
+
+Do not share the admin password publicly. The admin order view uses the
+server-side Supabase key and does not expose the Supabase secret key to the
+browser.

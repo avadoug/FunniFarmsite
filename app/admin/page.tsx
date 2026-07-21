@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { AdminProductManager } from "@/components/forms/AdminProductManager";
 
 export const metadata: Metadata = {
-  title: "Admin Product Management",
+  title: "Store Admin",
   description:
-    "Local-only product management starter for The Funni Farm catalog.",
+    "Private order review and starter catalog management for The Funni Farm.",
   robots: {
     follow: false,
     index: false,
